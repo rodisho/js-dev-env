@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "security-check": "nsp check --reporter summary",
+    "security-check": "nsp check",
     "start": "node ./buildScripts/scrServer.js"
   },
   "author": "Cory House",
