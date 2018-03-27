@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
+    "prestart": "babel-node ./buildScripts/startMessage.js",
+    "start": "npm-run-all --parallel security-check open:src",
+    "open:src": "babel-node ./buildScripts/scrServer.js",
     "security-check": "nsp check",
-    "start": "node ./buildScripts/scrServer.js"
+    "localtunnel": "lt --port 3000",
+    "share": "npm-run-all --parallel open:src localtunnel"
   },
   "author": "Cory House",
   "license": "MIT",
@@ -16,6 +20,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-latest": "^6.24.1",
     "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "chalk": "^2.1.0",
@@ -40,7 +45,7 @@
     "open": "^0.0.5",
     "rimraf": "^2.6.2",
     "style-loader": "^0.18.2",
-    "webpack": "^3.6.0",
+    "webpack": "^3.11.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.19.1",
     "webpack-md5-hash": "^0.0.5"
